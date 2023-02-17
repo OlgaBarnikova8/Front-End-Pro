@@ -122,3 +122,5 @@ let arr = [10, 20, 3, 4, 0, 99, 97];
 let sorted = copySorted(arr);
 console.log(arr); // [10, 20, 3, 4, 0, 99, 97] - массив не должен изменится!
 console.log(sorted); // [0, 3, 4, 10, 20, 97, 99]
+
+console.log('new feature is homework_5');
