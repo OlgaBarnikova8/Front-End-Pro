@@ -28,12 +28,12 @@ function getDiffDays(date1, date2) {
 
   if (start == 'Invalid Date' || end == 'Invalid Date') {
     console.error('Invalid Date');    
-    return;
+    return 'Invalid Date';
   } 
   
   if (diff < 0) {
-    console.error('your start date is later than end');
-    return;
+    console.error('Your start date is later than end');
+    return 'Your start date is later than end';
   } 
 
     return diff / (1000 * 3600 * 24);     
