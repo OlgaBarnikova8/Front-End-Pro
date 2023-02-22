@@ -26,21 +26,22 @@ function getDiffDays(date1, date2) {
   let endDay = end.getTime();  
   const diff = endDay - startDay; 
 
-  // if (start === 'Invalid Date') {
-  //   console.error('Invalid Date');
-  //   return;
-  // } 
+  if (start == 'Invalid Date' || end == 'Invalid Date') {
+    console.error('Invalid Date');    
+    return;
+  } 
   
-  // if (diff < 0) {
-  //   console.error('your start date is later than end');
-  //   return;
-  // } 
+  if (diff < 0) {
+    console.error('your start date is later than end');
+    return;
+  } 
 
     return diff / (1000 * 3600 * 24);     
 }
 
 console.log(getDiffDays('2020-01-01', '2020-01-17')); // 16
 console.log(getDiffDays('2020-01-01', '2020-03-15')); // 74
+console.log(getDiffDays('2023-01-01', '2021-03-15')); // 
 console.log(getDiffDays('2222222222', '2020-03-15')); // Error: Invalid date
 console.log(getDiffDays('2021-01-02', '2020-03-15')); // Error: your start date is later than end
 
