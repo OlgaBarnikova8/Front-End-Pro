@@ -16,7 +16,7 @@ function setUserInlocalStorage() {
         console.log(`data is in localStorage: ${data}`);
         return;
     } else {
-        
+
         fetch("https://jsonplaceholder.typicode.com/users/1")
           .then((response) => response.json())
           .then((data) => localStorage.setItem("1", JSON.stringify(data)))
@@ -28,9 +28,25 @@ function setUserInlocalStorage() {
 setUserInlocalStorage();
 
 
+// 3. Написать функцию isAfter , которая будет принимать 2 аргумента даты 
+// (это может быть либо объект Date, либо timestamp). 
+// Функция должна вернуть true, если первая переданная дата будет позже, чем вторая. 
+// Иначе вернуть false.
+function isAfter(date1, date2) {
+    const start = new Date(date1);
+    const end = new Date(date2);
+    let startDay = start.getTime();
+    let endDay = end.getTime();  
+    const diff = startDay - endDay; 
+
+    if (diff < 0) {
+        return false;
+    }
+
+    return true;
+}
 
 
-
-
-
-
+console.log(isAfter(new Date(1989, 6, 10), new Date(1987, 1, 11))); // true
+console.log(isAfter(1648636135000, 1648549735000)); // true
+console.log(isAfter(1648549735000, 1648636135000)); // false
