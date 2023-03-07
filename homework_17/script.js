@@ -10,37 +10,46 @@
 
 const form = document.forms.fruit;
 const { nameFruit } = form.elements;
-const button = document.querySelector("button");
 const list = document.getElementById("list");
 const errorMessage = document.querySelector(".errorMessage");
 
+list.addEventListener("click", (event)  => {  
+  const isRemoveButton = event.target.className === "btn";  
+
+  if (isRemoveButton) {    
+    event.target.parentElement.remove();
+  }
+});
+
+
+function addItem(list, style, content) {
+  const item = document.createElement("li");    
+  item.innerHTML = content;
+  item.classList.add(style);  
+  list.append(item);
+
+  const button = document.createElement("button");
+  button.innerHTML = "remove";
+  button.classList = "btn";    
+  item.prepend(button);
+}  
+
+function isEmptyField(content) {
+  return content.value.trim().length === 0
+}
+
 form.onsubmit = (event) => {
   event.preventDefault();
+
+  if (isEmptyField(nameFruit)) {
+    errorMessage.innerHTML = "enter a fruit";
+  } else {
+    addItem(list, "item-style", nameFruit.value);
+  }   
+  
+  nameFruit.value = "";
 }
 
 nameFruit.oninput = (event) => {      
-    errorMessage.innerHTML = "";
-}
-
-button.addEventListener("click", function() {
-  if (nameFruit.value.trim() !== "") {   
-
-      const item = document.createElement("li");
-      item.innerHTML = nameFruit.value;
-      item.classList.add("item-list");
-      list.append(item);
-      this.previousElementSibling.value = "";  
-
-      const button = document.createElement("button");
-      button.innerHTML = "remove";
-      button.classList = "btn";         
-      item.prepend(button);
-
-      button.onclick = (event) => {
-        event.target.parentElement.remove();
-      }
-
-  } else {        
-      errorMessage.innerHTML = "enter a fruit";
-  }
-});
+  errorMessage.innerHTML = "";
+} 
