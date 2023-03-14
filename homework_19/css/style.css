@@ -1,0 +1,3 @@
+.delete-user .bi-trash{
+    pointer-events: none;
+}
