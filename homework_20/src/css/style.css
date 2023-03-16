@@ -1,0 +1,15 @@
+body{
+    background-color: aquamarine;
+}
+
+.btn {
+    margin: 10px;
+}
+
+.errorMessage {
+    color: brown;
+}
+
+.text-through {
+    text-decoration: line-through;
+}
