@@ -44,10 +44,10 @@
  flex-wrap: wrap; 
 }
 
-.photos {
+.photos{ 
   flex: 0, 0, auto;
-  width: 40%;  
-} 
+  width: 40%;    
+}
 
 .btn {
   display: flex;

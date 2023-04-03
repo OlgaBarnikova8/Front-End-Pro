@@ -12,7 +12,7 @@ const ImagesList = () => {
     
     useEffect(() => {  
         getPhotos(page)                    
-          .then(data => {        
+          .then(data => { 
             setImages((prevValue) => [...prevValue, ...data]);           
             setLoading(false);  
           })      
@@ -31,7 +31,7 @@ const ImagesList = () => {
     return (
         <>
           <div className="container__photos">
-            {images.map(({id, url, author: alt}) => (          
+            {images.map(({ id, download_url: url, author: alt }) => (          
             <img key= {id} src={url} alt={alt} className="photos" />  
             ))}            
         </div>
