@@ -2,21 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
 
 import theme from './theme';
 import AuthProvider from './context/auth/AuthProvider';
 import Root from './routes/Root';
-import Header from './routes/Header';
 import Home from './routes/Home';
 import Users from './routes/Users';
 import User from './routes/User';
 import NotFound from './routes/NotFound';
-import Hotels from './routes/Hotels';
-import LoginForm from './components/LoginForm';
-
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import { element } from 'prop-types';
 
 const router = createBrowserRouter([
   {
@@ -39,11 +34,7 @@ const router = createBrowserRouter([
       {
         path: "hotels",
         element: <NotFound />,
-      },
-      {
-        path: "login",
-        element: <LoginForm />,
-      },
+      },      
     ]
   } 
 ]);
