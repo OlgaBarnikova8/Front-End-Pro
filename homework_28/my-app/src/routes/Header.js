@@ -1,10 +1,11 @@
-import { NavLink } from "react-router-dom";
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 
 import AuthContext from "../context/auth/AuthContext";
 import UserInfo from "../components/UserInfo";
 
 const Header = () => {
+
  const { isLoggedIn } = useContext(AuthContext); 
 
   return (
