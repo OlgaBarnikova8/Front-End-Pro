@@ -1,6 +1,10 @@
 import { createTheme } from '@mui/material/styles';
 import { blue } from '@mui/material/colors';
 
+import '@fontsource/nunito-sans/300.css';
+import '@fontsource/nunito-sans/400.css';
+import '@fontsource/nunito-sans/700.css';
+
 const theme = createTheme({
     palette: {
         primary: {
