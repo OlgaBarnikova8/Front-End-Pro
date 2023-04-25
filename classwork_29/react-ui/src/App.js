@@ -32,7 +32,7 @@ function App() {
       <Typography variant="h4">@mui</Typography>
       <Box m={1}>      
         <Button variant="contained" onClick={() => console.log('click')}>click</Button>
-        <Button variant="outlined" sx={{ m:1 }}>click</Button>
+        <Button variant="outlined" sx={{ m:1 }}>Сlick</Button>
         <Button variant="outlined" startIcon={<DeleteIcon />}>
           Delete
         </Button>
