@@ -14,7 +14,7 @@ const Form = () => {
       <Box sx={{ width: '100%', maxWidth: 700, m:'50px' }}>
       <Typography variant="h1">Passenger information</Typography> 
       <Typography variant="h3">Enter the required information for each traveler and be sure that it exactly matches the government-issued ID presented at the airport.</Typography>
-      <Typography variant="h2">Passenger 1 (Adult)</Typography> 
+      <Typography variant="h2">Passenger 1</Typography> 
         <form onSubmit={handleSubmit(onSubmit) }>
             <Controller
               control={control}
